@@ -2,7 +2,6 @@
     "name": "andromisa/larachet",
     "description": "Laravel and ratchet integration.",
     "license": "MIT",
-    "minimum-stability": "dev",
     "require": {
         "cboden/ratchet": "0.3.*",
         "react/zmq": "0.4.*",
