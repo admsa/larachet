@@ -1,0 +1,19 @@
+{
+    "name": "andromisa/larachet",
+    "description": "Laravel and ratchet integration.",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {
+        "cboden/ratchet": "0.3.*",
+        "react/zmq": "0.4.*",
+        "guzzle/guzzle": "~3.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Larachet\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpspec/phpspec": "~2.1"
+    }
+}
