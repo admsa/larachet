@@ -9,7 +9,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Larachet\\": "src/"
+            "Andromisa\\Larachet\\": "src/"
         }
     },
     "require-dev": {
