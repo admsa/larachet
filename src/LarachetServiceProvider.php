@@ -12,19 +12,19 @@ use ZMQContext;
 
 class LarachetServiceProvider extends ServiceProvider {
 
-	/**
-	 * Indicates if loading of the provider is deferred.
-	 *
-	 * @var bool
-	 */
+    /**
+     * Indicates if loading of the provider is deferred.
+     *
+     * @var bool
+     */
     protected $defer = false;
 
-	/**
-	 * Boot the service provider.
-	 *
-	 * @return void
-	 */
-	public function boot()
+    /**
+     * Boot the service provider.
+     *
+     * @return void
+     */
+    public function boot()
     {
         $app = $this->app;
 
@@ -44,16 +44,15 @@ class LarachetServiceProvider extends ServiceProvider {
                 }
             });
         }
+    }
 
-	}
-
-	/**
-	 * Register the service provider.
-	 *
-	 * @return void
-	 */
-	public function register()
-	{
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function register()
+    {
         $larachet = function($app) {
             return new Larachet(new ZMQContext);
         };
@@ -74,15 +73,15 @@ class LarachetServiceProvider extends ServiceProvider {
         });
 
         $this->commands(['command.larachet.serve']);
-	}
+    }
 
-	/**
-	 * Get the services provided by the provider.
-	 *
-	 * @return array
-	 */
-	public function provides()
-	{
-		return ['larachet', 'command.larachet.serve'];
-	}
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return ['larachet', 'command.larachet.serve'];
+    }
 }
