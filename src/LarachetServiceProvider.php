@@ -37,9 +37,10 @@ class LarachetServiceProvider extends ServiceProvider {
         if ( ! $app->runningInConsole()) {
             $app['router']->after(function($request, $response) use($app) {
                 $content = $response->getContent();
-                preg_match ('/\<script(.*)?>/', $content, $matches, PREG_OFFSET_CAPTURE);
+                /*preg_match ('/\<script(.*)?>/', $content, $matches, PREG_OFFSET_CAPTURE);*/
+                // $pos = isset($matches[0][1]) ? $matches[0][1] : false;
 
-                if (false !== ($pos = isset($matches[0][1]) ? $matches[0][1] : false)) {
+                if (false !== ($pos = strripos($content, '</head>'))) {
                     $response->setContent(substr($content, 0, $pos) . (new JsRenderer($app['files']))->renderScript('larachet.assets.js') . substr($content, $pos));
                 }
             });
