@@ -16,7 +16,7 @@ class JsRenderer {
      *
      * @var string
      */
-    const TAG = "<script src=\"%s\"></script>\n\t";
+    const TAG = "<script src=\"%s\" async></script>\n\t";
 
     /**
      * Holds filesystem object
